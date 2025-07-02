@@ -1,0 +1,33 @@
+<!-- Testimonial One -->
+<section class="testimonial-one">
+    <div class="testimonial-one_pattern" style="background-image:url(assets/images/background/8.jpg)"></div>
+    <div class="auto-container">
+        <div class="sec-title">
+            <div class="sec-title_title">What They Say</div>
+            <h2 class="sec-title_heading">Why Our Customer <br> Conat Place</h2>
+        </div>
+        <div class="two-item-carousel owl-carousel owl-theme">
+
+            <div class="testimonial-block_one" *ngFor="let testimonial of testimonials">
+                <div class="testimonial-block_one-inner">
+                    <div class="testimonial-block_one-content">
+                    <div class="testimonial-block_one-text">{{ testimonial.text }}</div>
+                    <div class="testimonial-block_one-rating">
+                        <span class="fa fa-star" *ngFor="let star of [].constructor(testimonial.rating)"></span>
+                    </div>
+                    <div class="testimonial-block_one-quote" [ngClass]="testimonial.quoteIcon"></div>
+                    </div>
+                    <div class="testimonial-block_one-lower">
+                    <div class="testimonial-block_one-author">
+                        <img [src]="testimonial.authorImage" alt="{{ testimonial.authorName }}" />
+                    </div>
+                    <strong>{{ testimonial.authorName }}</strong>
+                    {{ testimonial.authorRole }}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Testimonial One -->

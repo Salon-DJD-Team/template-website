@@ -1,0 +1,16 @@
+<!-- Accordion Box / Style Two -->
+<ul class="accordion-box style-two">
+  <li class="accordion block" *ngFor="let faq of faqs; let i = index" [ngClass]="{ 'active-block': i === 0 }">
+    <div class="acc-btn" [ngClass]="{ 'active': i === 0 }">
+      <div class="icon-outer">
+        <span class="icon fa-solid fa-angle-down fa-fw"></span>
+      </div>
+      {{ faq.question }}
+    </div>
+    <div class="acc-content" [ngClass]="{ 'current': i === 0 }">
+      <div class="content">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </li>
+</ul>

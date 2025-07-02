@@ -1,0 +1,54 @@
+<!-- News Three -->
+<section id="blog" class="news-three">
+    <div class="auto-container">
+        <div class="sec-title">
+            <div class="d-flex justify-content-between align-items-end flex-wrap">
+                <div class="title-box title-anim">
+                    <div class="sec-title_title">Blog % Articles</div>
+                    <h2 class="sec-title_heading">News & Articles</h2>
+                </div>
+                <div class="button-box title-anim">
+                    <a href="blog-classic" class="theme-btn btn-style-one">
+                        <span class="btn-wrap">
+                            <span class="text-one">View More News</span>
+                            <span class="text-two">View More News</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row clearfix">
+            <div *ngFor="let article of articles" class="news-block_three col-lg-4 col-md-6 col-sm-12">
+                <div class="news-block_three-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <!-- Post Info -->
+                    <div class="news-block_three-post">
+                        <div class="news-block_three-post-inner">
+                            <div class="news-block_three-post-image">
+                                <img src="assets/images/resource/author-1.jpg" alt="" />
+                            </div>
+                            By: <span>{{ article.author }}</span>
+                        </div>
+                    </div>
+                    <div class="news-block_three-image">
+                        <a href="blog-details/{{ article.slug }}">
+                            <img [src]="article.image" alt="" />
+                        </a>
+                        <img [src]="article.image" alt="" />
+                    </div>
+                    <div class="news-block_three-content">
+                        <ul class="news-block_three-meta">
+                            <li><span class="icon fa-regular fa-calendar fa-fw"></span>{{ article.date }}</li>
+                            <li><span class="icon fa-solid fa-comments fa-fw"></span>Comments ({{ article.comments }})</li>
+                        </ul>
+                        <h5 class="news-block_three-heading">
+                            <a href="blog-details/{{ article.slug }}">{{ article.title }}</a>
+                        </h5>
+                        <a class="news-block_three-more" href="blog-details/{{ article.slug }}">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End News Three -->

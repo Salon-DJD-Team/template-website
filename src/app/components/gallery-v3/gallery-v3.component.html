@@ -1,0 +1,21 @@
+<!-- Speakers Three -->
+<section class="gallery-three">
+    <div class="auto-container">
+        <div class="row clearfix">
+            
+            <!-- Gallery One Block -->
+            <div class="gallery-one_block col-lg-4 col-md-4 col-sm-6" *ngFor="let gallery of galleries">
+                <div class="gallery-one_block-inner">
+                    <div class="gallery-one_block-image">
+                        <img src="{{ gallery.image }}" alt="" />
+                        <div class="gallery-one_block-overlay">
+                            <a href="{{ gallery.image }}" class="lightbox-image gallery-one_block-icon flaticon-plus-symbol"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Speakers Four -->

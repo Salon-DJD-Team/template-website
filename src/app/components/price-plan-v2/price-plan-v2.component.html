@@ -1,0 +1,39 @@
+<!-- Price Two -->
+<section class="price-two">
+    <div class="price-two_pattern-one" style="background-image:url(assets/images/background/pattern-24.png)" *ngIf="currentRoute === '/price'"></div>
+    <div class="price-two_pattern-two" style="background-image:url(assets/images/background/pattern-24.png)" *ngIf="currentRoute === '/price'"></div>
+    <div class="auto-container">
+        <div class="sec-title title-anim centered">
+            <div class="sec-title_title">Conference Ticket Price</div>
+            <h2 class="sec-title_heading">Conference Tickets Now</h2>
+        </div>
+        <div class="row clearfix">
+
+            <!-- Price Block Two -->
+            <div class="price-block_two col-lg-4 col-md-6 col-sm-12" *ngFor="let price of pricing">
+                <div class="price-block_two-inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <span class="price-block_two-color_layer"></span>
+                    <div class="price-block_two-time">{{ price.day }}</div>
+                    <div class="price-block_two-title">{{ price.title }}</div>
+                    <div class="price-block_two-date">{{ price.price }}</div>
+                    <div class="price-block_two-content">
+                        <ul class="price-block_two-options">
+                            <li *ngFor="let option of price.options" [class.light]="option.class"><strong>{{ option.feature }}</strong>{{ option.description }}</li>
+                        </ul>
+                        <div class="price-block_two-button">
+                            <a href="{{ price.button.url }}" class="theme-btn btn-style-one">
+                                <span class="btn-wrap">
+                                    <span class="text-one">{{ price.button.button }}</span>
+                                    <span class="text-two">{{ price.button.button }}</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="price-block_two-charges">{{ price.charges_note }}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Price Two -->

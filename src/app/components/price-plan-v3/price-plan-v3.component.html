@@ -1,0 +1,33 @@
+<!-- Price Three -->
+<section class="price-three" style="background-image:url(assets/images/background/9.jpg)">
+    <div class="auto-container">
+        <div class="sec-title light centered">
+            <div class="sec-title_title">Conference Ticket Price</div>
+            <h2 class="sec-title_heading">Get You a Conference <br>	Tickets Now </h2>
+        </div>
+        <div class="row clearfix">
+
+            <div class="price-block_three col-lg-4 col-md-6 col-sm-12" *ngFor="let price of pricing">
+                <div class="price-block_three-inner wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="price-block_three-pattern" [ngStyle]="{'background-image': 'url(' + price.pattern + ')'}"></div>
+                    <div class="price-block_three-title">{{ price.title }}</div>
+                    <div class="price-block_three-price">{{ price.price }} <span>{{ price.duration }}</span></div>
+                    <ul class="price-block_three-options">
+                        <li *ngFor="let option of price.options" [class.light]="option.light"><strong>{{ option.title }}</strong>{{ option.text }}</li>
+                    </ul>
+                    <div class="price-block_three-button">
+                        <a href="{{ price.buttonLink }}" class="theme-btn btn-style-two">
+                            <span class="btn-wrap">
+                            <span class="text-one">{{ price.buttonText }}</span>
+                            <span class="text-two">{{ price.buttonText }}</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="price-block_three-charges">{{ price.charges }}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Price Three -->

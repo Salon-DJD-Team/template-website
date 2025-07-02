@@ -1,0 +1,21 @@
+<!-- Gallery Two -->
+<section class="gallery-two">
+    <div class="outer-container">
+        <div class="gallery-carousel owl-carousel owl-theme">
+
+            <!-- Gallery One Block -->
+            <div class="gallery-one_block" *ngFor="let gallery of galleries">
+                <div class="gallery-one_block-inner">
+                    <div class="gallery-one_block-image">
+                        <img src="{{ gallery.image }}" alt="" />
+                        <div class="gallery-one_block-overlay">
+                            <a href="{{ gallery.image }}" class="lightbox-image gallery-one_block-icon flaticon-plus-symbol"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Gallery Two -->

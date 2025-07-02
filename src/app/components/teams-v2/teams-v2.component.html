@@ -1,0 +1,32 @@
+<!-- Speakers One -->
+<section id="speakers" class="team-one">
+		
+    <div class="auto-container">
+        <div class="sec-title title-anim centered">
+            <div class="sec-title_title">Our Speakers</div>
+            <h2 class="sec-title_heading">Speakers Exparts</h2>
+        </div>
+        <div class="row clearfix">
+            <!-- Speaker Block One -->
+            <div class="team-block_one col-lg-4 col-md-6 col-sm-12" *ngFor="let team of teams; let i = index">
+                <div class="team-block_one-inner wow {{getAnimationClass(i)}}" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="team-block_one-pattern" style="background-image:url(assets/images/background/pattern-20.png)"></div>
+                    <div class="team-block_one-image">
+                        <img [src]="team.image" [alt]="team.name" />
+                        <div class="team-block_one-social-list">
+                            <a [href]="team.social.facebook" class="facebook fa-brands fa-facebook-f" target="_blank"></a>
+                            <a [href]="team.social.twitter" class="twitter fa-brands fa-twitter" target="_blank"></a>
+                            <a [href]="team.social.instagram" class="youtube fa-brands fa-instagram" target="_blank"></a>
+                            <a [href]="team.social.youtube" class="youtube fa-brands fa-youtube" target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="team-block_one-content">
+                        <h4 class="team-block_one-title"><a href="speaker-details/{{team.slug}}">{{team.name}}</a></h4>
+                        <div class="team-block_one-designation">{{team.designation}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Speakers One -->

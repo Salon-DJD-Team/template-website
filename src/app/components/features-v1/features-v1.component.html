@@ -1,0 +1,29 @@
+<!-- Feature One -->
+<section class="feature-one">
+    <div class="feature-one_pattern" style="background-image:url(assets/images/background/pattern-7.png)"></div>
+    <div class="feature-one_pattern-two" style="background-image:url(assets/images/background/pattern-8.png)"></div>
+    <div class="feature-one_pattern-three" data-parallax='{"y" : 80}' style="background-image:url(assets/images/background/pattern-9.png)"></div>
+    <div class="auto-container">
+        <div class="sec-title title-anim">
+            <div class="sec-title_title">Our Features</div>
+            <h2 class="sec-title_heading">Features For Client</h2>
+        </div>
+        <div class="row clearfix">
+
+            <!-- Feature Block One -->
+            <div class="feature-block_one col-lg-3 col-md-6 col-sm-12" *ngFor="let feature of features">
+                <div class="feature-block_one-inner wow fadeInUp" 
+                     [attr.data-wow-delay]="feature.animationDelay" 
+                     data-wow-duration="1500ms">
+                    <div class="feature-block_one-icon" [class]="feature.iconClass"></div>
+                    <h4 class="feature-block_one-title">
+                        <a href="event-details/{{ feature.slug }}">{{feature.title}}</a>
+                    </h4>
+                    <a class="feature-block_one-more" href="event-details/{{ feature.slug }}">Read More</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Feature One -->

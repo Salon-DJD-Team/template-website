@@ -1,0 +1,44 @@
+<!-- Event Three -->
+<section class="event-three">
+    <div class="auto-container">
+  
+      <div
+        class="leadership-one_block"
+        *ngFor="let event of paginatedEvents"
+        [ngClass]="event.style"
+      >
+        <div class="leadership-one_block-inner">
+          <div class="leadership-one_block-content">
+            <div class="leadership-one_block-image">
+              <img [src]="event.image" alt="" />
+              <div class="leadership-one_block-icon flaticon-voice"></div>
+            </div>
+            <div class="leadership-one_block-time">{{ event.time }}</div>
+            <div class="leadership-one_block-name">{{ event.name }}</div>
+            <h3 class="leadership-one_block-title">
+              <a href="event-details/{{ event.slug }}">{{ event.title }}</a>
+            </h3>
+            <div class="leadership-one_block-text">{{ event.text }}</div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Styled Pagination -->
+      <ul class="styled-pagination text-center" *ngIf="totalPages > 1">
+        <li class="next" (click)="changePage(currentPage - 1)">
+          <a href="javascript:void(0)"><span class="fa fa-angle-double-left"></span></a>
+        </li>
+        <li *ngFor="let page of [].constructor(totalPages); let i = index">
+          <a href="javascript:void(0)" [class.active]="currentPage === i + 1" (click)="changePage(i + 1)">
+            {{ i + 1 }}
+          </a>
+        </li>
+        <li class="next" (click)="changePage(currentPage + 1)">
+          <a href="javascript:void(0)"><span class="fa fa-angle-double-right"></span></a>
+        </li>
+      </ul>
+      <!-- End Styled Pagination -->
+  
+    </div>
+</section>
+  

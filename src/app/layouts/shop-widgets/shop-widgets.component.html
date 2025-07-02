@@ -1,0 +1,58 @@
+<aside class="sidebar sticky-top">
+
+    <!-- Sidebar Widget -->
+    <div class="sidebar-widget search-box">
+        <form method="post" action="#">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search..." required>
+                <button type="submit"><span class="icon fa fa-search"></span></button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Category Widget -->
+    <div class="sidebar-widget category-widget">
+        <div class="widget-content">
+            <h4 class="sidebar-widget_title">Products Categories</h4>
+            <ul class="category-list">
+                <li><a href="#">Business<span>01</span></a></li>
+                <li><a href="#">Conference<span>05</span></a></li>
+                <li><a href="#">Digital<span>08</span></a></li>
+                <li><a href="#">Music<span>04</span></a></li>
+                <li><a href="#">Startup<span>03</span></a></li>
+                <li><a href="#">Workshop<span>07</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Post Widget -->
+    <div class="sidebar-widget post-widget">
+        <div class="widget-content">
+            <h4 class="sidebar-widget_title">Recent Prducts</h4>
+            
+            <div class="post" *ngFor="let product of products">
+                <div class="thumb">
+                  <a href="product-details/{{ product.slug }}"><img [src]="product.image" [alt]="product.title" /></a>
+                </div>
+                <div class="post-date">{{ product.date | date: 'dd MMMM, yyyy' }}</div>
+                <h6><a href="product-details/{{ product.slug }}">{{ product.title }}</a></h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Widget -->
+    <div class="sidebar-widget popular-tags">
+        <div class="widget-content">
+            <h4 class="sidebar-widget_title">Tag</h4>
+            <a href="#">Business</a>
+            <a href="#">Conference</a>
+            <a href="#">Digital</a>
+            <a href="#">Development</a>
+            <a href="#">Venue</a>
+            <a href="#">Tech</a>
+            <a href="#">Workshop</a>
+            <a href="#">Speaker</a>
+        </div>
+    </div>
+
+</aside>

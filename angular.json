@@ -1,0 +1,133 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "conat": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/conat",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/global.css",
+              "src/assets/css/rtl.css",
+              "src/assets/css/header.css",
+              "src/assets/css/footer.css",
+              "src/assets/css/font-awesome.css",
+              "src/assets/css/flaticon.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/owl.css",
+              "src/assets/css/jquery-ui.css",
+              "src/assets/css/custom-animate.css",
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/odometer.css",
+              "src/assets/css/style.css",
+              "src/assets/css/responsive.css"
+            ],
+            "scripts": [
+              "src/assets/js/jquery.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/appear.js",
+              "src/assets/js/parallax.min.js",
+              "src/assets/js/tilt.jquery.min.js",
+              "src/assets/js/paroller.min.js",
+              "src/assets/js/owl.js",
+              "src/assets/js/wow.js",
+              "src/assets/js/backtotop.js",
+              "src/assets/js/odometer.js",
+              "src/assets/js/parallax-scroll.js",
+              "src/assets/js/magnific-popup.min.js",
+              "src/assets/js/nav-tool.js",
+              "src/assets/js/jquery-ui.js",
+              "src/assets/js/touchspin.js",
+              "src/assets/js/countdown.js",
+              "src/assets/js/pagenav.js",
+              "src/assets/js/script.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "conat:build:production"
+            },
+            "development": {
+              "buildTarget": "conat:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

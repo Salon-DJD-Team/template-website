@@ -1,0 +1,46 @@
+<!-- Slider Three -->
+<section class="slider-three">
+  <div class="main-slider-carousel owl-carousel owl-theme">
+  
+    <!-- Slide 01 -->
+    <div class="slider-three_slide" *ngFor="let slide of slides">
+      <div class="slider-three_pattern-one" [style.backgroundImage]="'url(' + slide.pattern + ')'"></div>
+      <div class="slider-three_image-layer" [style.backgroundImage]="'url(' + slide.image + ')'"></div>
+      <div class="auto-container">
+        <div class="row clearfix">
+
+          <!-- Content Column -->
+          <div class="slider-three_content col-lg-7 col-md-12 col-sm-12">
+            <div class="slider-three_content-inner">
+              <div class="slider-three_title">{{ slide.title }}</div>
+              <h2 class="slider-three_heading">{{ slide.heading }}</h2>
+              <div class="slider-three_location">{{ slide.location }}</div>
+              <!-- Time Countdown -->
+              <div class="slider-three_timer">
+                <div class="time-countdown clearfix" data-countdown="2027/12/1"></div>
+              </div>
+              <div class="slider-three_button">
+                <a href="{{ slide.button_link }}" class="theme-btn btn-style-three">
+                  <span class="btn-wrap">
+                    <span class="text-one">{{ slide.button_name }}</span>
+                    <span class="text-two">{{ slide.button_name }}</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="slider-three_image-column col-lg-5 col-md-12 col-sm-12">
+            <div class="slider-three_image">
+              <img [src]="slide.image" alt="" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Slide 01 -->
+    
+  </div>
+</section>
+<!-- End Slider Three Section -->

@@ -1,0 +1,26 @@
+<!-- Top Features -->
+<section class="top-features">
+    <div class="auto-container">
+        <div class="row">
+            
+            <!-- Feature Block -->
+            <div class="feature-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" *ngFor="let feature of topFeatures; let i = index" [attr.data-wow-delay]="i * 400 + 'ms'" >
+                <div class="inner-box">
+                <div class="icon-box"><span class="icon" [ngClass]="feature.icon"></span></div>
+                <h4><a href="event-details/{{ feature.slug }}">{{ feature.title }}</a></h4>
+                <div class="text">{{ feature.description }}</div>
+                <div class="btn-box">
+                    <a href="event-details/{{ feature.slug }}" class="theme-btn btn-style-one">
+                    <span class="btn-wrap">
+                        <span class="text-one">Read More</span>
+                        <span class="text-two">Read More</span>
+                    </span>
+                    </a>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--End Top Features -->

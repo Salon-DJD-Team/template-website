@@ -1,0 +1,36 @@
+<!-- Price One -->
+<section class="price-one">
+    <div class="price-one_pattern" style="background-image:url(assets/images/background/pattern-4.png)"></div>
+    <div class="auto-container">
+        <div class="sec-title title-anim centered">
+            <div class="sec-title_title">Conference Ticket Price</div>
+            <h2 class="sec-title_heading">Conference Tickets Now </h2>
+        </div>
+        <div class="row clearfix">
+
+            <!-- Price Block One -->
+            <div class="price-block_one col-lg-4 col-md-6 col-sm-12" *ngFor="let price of pricing">
+                <div class="price-block_one-inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <div class="price-block_one-pattern" [style.backgroundImage]="'url(' + price.backgroundPattern + ')'"></div>
+                    <div class="price-block_one-pattern-two" [style.backgroundImage]="'url(' + price.backgroundPatternTwo + ')'"></div>
+                    <div class="price-block_one-title">{{ price.title }}</div>
+                    <div class="price-block_one-price">{{ price.price }} <span>{{ price.day }}</span></div>
+                    <ul class="price-block_one-options">
+                        <li *ngFor="let option of price.options" [class.light]="option.light"><strong>{{ option.title }}</strong>{{ option.text }}</li>
+                    </ul>
+                    <div class="price-block_one-button">
+                        <a href="{{ price.button.link }}" class="theme-btn {{ price.button.style }}">
+                            <span class="btn-wrap">
+                                <span class="text-one">{{ price.button.text }}</span>
+                                <span class="text-two">{{ price.button.text }}</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="price-block_one-charges">{{ price.chargesNote }}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Price One -->

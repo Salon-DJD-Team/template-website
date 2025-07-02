@@ -1,0 +1,68 @@
+<!-- Speakers Two -->
+<section class="speakers-two">
+    <div class="auto-container">
+        <div class="sec-title centered">
+            <div class="sec-title_title">Thought Leadership</div>
+            <h2 class="sec-title_heading">Join The World's Leading <br> Companies at Technology Conference</h2>
+        </div>
+        <div class="inner-container">
+            <!-- Speaker Info Tabs -->
+            <div class="speaker-info-tabs">
+                <!-- Speaker Tabs -->
+                <div class="speaker-tabs tabs-box">
+                
+                    <!-- Tab Btns -->
+                    <ul class="tab-btns tab-buttons clearfix">
+                        <li 
+                            *ngFor="let tab of tabs" 
+                            class="tab-btn" 
+                            [class.active-btn]="selectedTab === tab.id"
+                            (click)="selectedTab = tab.id"
+                        >
+                            <span>{{ tab.date }}</span> {{ tab.day }}
+                        </li>
+                    </ul>
+
+                    <!-- Tabs Container -->
+                    <div class="tabs-content">
+                        <div 
+                            *ngFor="let tab of tabs" 
+                            class="tab" 
+                            [class.active-tab]="selectedTab === tab.id"
+                            [id]="tab.id"
+                        >
+                            <div class="content">
+                            <div 
+                                *ngFor="let session of tab.speakers" 
+                                class="leadership-two_block"
+                                [class.style-two]="session.style === 'style-two'"
+                            >
+                                <div class="leadership-two_block-inner">
+                                <div class="leadership-two_block-image">
+                                    <img [src]="session.image" alt="" />
+                                    <div class="leadership-two_block-icon" [class]="session.icon"></div>
+                                </div>
+                                <div class="leadership-two_block-content">
+                                    <div class="leadership-two_block-time">{{ session.time }}</div>
+                                    <div class="leadership-two_block-name">{{ session.name }}, <span>{{ session.role }}</span></div>
+                                    <h3 class="leadership-two_block-title">
+                                    <a href="event-details/{{session.link}}">{{ session.title }}</a>
+                                    </h3>
+                                    <div class="leadership-two_block-location"><span>Location:</span> {{ session.location }}</div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Speakers Two -->

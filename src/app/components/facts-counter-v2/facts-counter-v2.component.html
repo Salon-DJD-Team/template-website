@@ -1,0 +1,21 @@
+<!-- Counter Two -->
+<section class="counter-two">
+    <div class="counter-two_pattern" style="background-image:url(assets/images/background/pattern-19.png)"></div>
+    <div class="auto-container">
+        <div class="inner-container">
+            <div class="row clearfix">
+
+                <!-- Counter Column -->
+                <div class="counter-two_block col-lg-3 col-md-6 col-sm-12" *ngFor="let fact of facts">
+                    <div class="counter-two_inner">
+                        <span class="counter-two_block-icon {{ fact.icon }}"></span>
+                        <div class="counter-two_counter"><span class="odometer" [attr.data-count]="fact.counter"></span>{{ fact.suffix }}</div>
+                        <div class="counter-two_text">{{ fact.title }}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Counter Two -->

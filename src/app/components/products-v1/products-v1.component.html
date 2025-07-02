@@ -1,0 +1,49 @@
+<div class="row clearfix">
+
+    <!-- Product Block Two -->
+    <div class="product-block-two col-lg-4 col-md-6 col-sm-12" *ngFor="let product of paginatedProducts">
+        <div class="inner-box">
+            <div class="image">
+              <a href="product-details/{{ product.slug }}"><img [src]="product.image" [alt]="product.name" /></a>
+              <ul class="options-navs">
+                <li><a href="product-details/{{ product.slug }}" class="fa fa-heart"></a></li>
+                <li><a href="product-details/{{ product.slug }}" class="fa-solid fa-cart-shopping fa-fw"></a></li>
+                <li><a [href]="product.image" data-fancybox="gallery" class="fa-solid fa-eye fa-fw lightbox-image"></a></li>
+              </ul>
+            </div>
+            <div class="lower-content">
+              <div class="plus-box">
+                <div class="icon fa fa-plus"></div>
+              </div>
+              <h6><a href="product-details/{{ product.slug }}">{{ product.name }}</a></h6>
+              <div class="rating">
+                <span *ngFor="let star of [].constructor(product.rating)" class="fa fa-star"></span>
+                <span *ngFor="let empty of [].constructor(5 - product.rating)" class="light fa fa-star"></span>
+              </div>
+              <div class="price">
+                <span [ngClass]="{ 'line-through': product.discount }">{{ product.price }}</span>
+                <span *ngIf="product.discount"> - {{ product.discount }}</span>
+              </div>              
+            </div>
+        </div>
+    </div>
+
+    <!-- Styled Pagination -->
+    <ul class="styled-pagination style-two text-center">
+        <li class="next" (click)="prevPage()">
+          <a href="javascript:void(0)"><span class="fa fa-angle-double-left"></span></a>
+        </li>
+        <li *ngFor="let page of totalPages">
+          <a
+            href="javascript:void(0)"
+            [class.active]="page === currentPage"
+            (click)="goToPage(page)"
+          >{{ page }}</a>
+        </li>
+        <li class="next" (click)="nextPage()">
+          <a href="javascript:void(0)"><span class="fa fa-angle-double-right"></span></a>
+        </li>
+    </ul>
+    <!-- End Styled Pagination -->
+
+</div>

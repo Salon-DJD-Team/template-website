@@ -1,0 +1,77 @@
+<!-- Speakers Four -->
+<section class="speakers-four">
+    <div class="speakers-four_pattern" style="background-image:url(assets/images/background/pattern-24.png)"></div>
+    <div class="auto-container">
+        <div class="sec-title">
+            <div class="sec-title_title">Thought Leadership</div>
+            <h2 class="sec-title_heading">Join The World's Leading <br> Companies at Technology <br> Conference</h2>
+        </div>
+        <div class="inner-container">
+            <!-- Speaker Info Tabs -->
+            <div class="speaker-info-tabs">
+                <!-- Speaker Tabs -->
+                <div class="speaker-tabs_two tabs-box">
+                
+                    <!-- Tab Btns -->
+                    <ul class="tab-btns tab-buttons clearfix">
+                        <li
+                            *ngFor="let tab of tabs"
+                            class="tab-btn"
+                            [class.active-btn]="activeTab === tab.id"
+                            (click)="activeTab = tab.id"
+                        >
+                            <span>{{ tab.dayLabel }}</span>
+                            {{ tab.month }}
+                            <strong>{{ tab.date }}</strong>
+                            <i>{{ tab.year }}</i>
+                        </li>
+                    </ul>
+
+                    <!-- Tabs Container -->
+                    <div class="tabs-content">
+                        <div
+                            *ngFor="let tab of tabs"
+                            class="tab"
+                            [class.active-tab]="activeTab === tab.id"
+                            [id]="tab.id"
+                        >
+                            <div class="content">
+
+                            <!-- Session Block -->
+                                <div
+                                    class="leadership-three_block"
+                                    *ngFor="let s of tab.sessions"
+                                >
+                                    <div class="leadership-three_block-inner">
+                                        <div class="leadership-three_block-content">
+                                            <div class="leadership-three_block-image">
+                                                <img [src]="s.image" alt="" />
+                                            </div>
+                                            <div class="leadership-three_block-name">
+                                                {{ s.name }}, <span>{{ s.role }}</span>
+                                            </div>
+                                            <h3 class="leadership-three_block-title">
+                                                <a href="event-details/{{s.link}}">{{ s.title }}</a>
+                                            </h3>
+                                            <div class="leadership-three_block-location">
+                                                <span>Location:</span> {{ s.location }}
+                                            </div>
+                                            <div class="leadership-three_block-timing">
+                                                {{ s.timeStart }}<br />{{ s.timeEnd }}
+                                            </div>
+                                        </div>
+                                        <div class="leadership-three_block-icon flaticon-voice"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Speakers Four -->

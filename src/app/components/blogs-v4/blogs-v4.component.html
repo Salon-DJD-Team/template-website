@@ -1,0 +1,47 @@
+<div class="our-blog">
+  <div class="row clearfix">
+
+    <div class="news-block_one col-lg-6 col-md-6 col-sm-12" *ngFor="let article of paginatedArticles">
+      <div class="news-block_one-inner">
+        <!-- Post Info -->
+        <div class="news-block_one-tag">{{ article.category }}</div>
+        <div class="news-block_one-image">
+          <a href="blog-details/{{ article.slug }}">
+            <img [src]="article.image" [alt]="article.title" />
+          </a>
+          <img [src]="article.image" [alt]="article.title" />
+        </div>
+        <div class="news-block_one-content">
+          <div class="news-block_one-date">{{ article.date | date: 'd MMM y' }}</div>
+          <ul class="news-block_one-meta">
+            <li><span class="icon fa-regular fa-calendar fa-fw"></span>by {{ article.author }}</li>
+            <li><span class="icon fa-solid fa-comments fa-fw"></span>({{ article.comments }}) Comments</li>
+          </ul>
+          <h5 class="news-block_one-title">
+            <a href="blog-details/{{ article.slug }}">{{ article.title }}</a>
+          </h5>
+          <a class="news-block_one-more" href="blog-details/{{ article.slug }}">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Styled Pagination -->
+    <ul class="styled-pagination text-center">
+      <li class="next" (click)="prevPage()">
+        <a href="javascript:void(0)"><span class="fa fa-angle-double-left"></span></a>
+      </li>
+      <li *ngFor="let page of totalPages">
+        <a
+          href="javascript:void(0)"
+          [class.active]="page === currentPage"
+          (click)="goToPage(page)"
+        >{{ page }}</a>
+      </li>
+      <li class="next" (click)="nextPage()">
+        <a href="javascript:void(0)"><span class="fa fa-angle-double-right"></span></a>
+      </li>
+    </ul>
+    <!-- End Styled Pagination -->
+
+  </div>
+</div>

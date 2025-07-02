@@ -1,0 +1,31 @@
+<!-- Banner Section -->
+<section id="home" class="banner-section">
+    <div class="banner-carousel">
+        <div class="main-slider-carousel owl-carousel owl-theme">
+
+            <!-- Slide Item -->
+            <div class="swiper-slide" [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }" *ngFor="let slide of slides">
+                <div class="auto-container">
+                    <div class="content-box">
+                        <span class="title">{{ slide.title }}</span>
+                        <h2>{{ slide.heading }}</h2>
+                        <ul class="info-list">
+                            <li><span class="icon flaticon-clock"></span> {{ slide.date }}</li>
+                            <li><span class="icon flaticon-maps-and-flags"></span> {{ slide.location }}</li>
+                        </ul>
+                        <div class="btn-box">
+                        <a href="{{ slide.link }}" class="theme-btn btn-style-one">
+                            <span class="btn-wrap">
+                                <span class="text-one">{{ slide.button }}</span>
+                                <span class="text-two">{{ slide.button }}</span>
+                            </span>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--End Banner Section -->

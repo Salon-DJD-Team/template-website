@@ -1,0 +1,110 @@
+<!--Main Footer-->
+<footer class="footer-two">
+    <div class="footer-two_icon-one" style="background-image:url(assets/images/icons/icon-5.png)"></div>
+    <div class="footer-two_icon-two" style="background-image:url(assets/images/icons/icon-5.png)"></div>
+    <div class="footer-two_icon-three" style="background-image:url(assets/images/icons/icon-6.png)"></div>
+    <div class="footer-two_icon-four" style="background-image:url(assets/images/icons/icon-6.png)"></div>
+    <div class="footer-two_icon-five" style="background-image:url(assets/images/icons/icon-7.png)"></div>
+    <div class="footer-two_icon-six" style="background-image:url(assets/images/icons/icon-8.png)"></div>
+    <div class="footer-two_icon-seven" style="background-image:url(assets/images/icons/icon-9.png)"></div>
+    <div class="footer-two_icon-eight" style="background-image:url(assets/images/icons/icon-10.png)"></div>
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="footer-two-widgets">
+            <div class="row clearfix">
+                
+                <!--big column-->
+                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+                        
+                        <!--Footer Column-->
+                        <div class="footer-two_column col-lg-7 col-md-6 col-sm-12">
+                            <div class="footer-two-widget logo-widget">
+                                <div class="footer-two_logo">
+                                    <a href="/"><img src="assets/images/logo.png" alt="" /></a>
+                                </div>
+                                <div class="footer-two_text">We have very good strength in innovative technology and tools with over 35 years of experience. We makes long-term investments goal in global companies in different sectors, mainly in Europe and other countries.</div>
+                            </div>
+                        </div>
+                        
+                        <!--Footer Column-->
+                        <div class="footer-two_column col-lg-5 col-md-6 col-sm-12">
+                            <div class="footer-two-widget links-widget">
+                                <h4 class="footer-two_title">Links</h4>
+                                <ul class="footer-two_list">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="about-us">About Us</a></li>
+                                    <li><a href="events">Events</a></li>
+                                    <li><a href="gallery">Gallery</a></li>
+                                    <li><a href="blog-classic">Blogs</a></li>
+                                    <li><a href="contact-us-01">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--big column-->
+                <div class="big-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+                        
+                        <!--Footer Column-->
+                        <div class="footer-two_column col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer-widget news-widget">
+                                <h4 class="footer-two_title">Information</h4>
+                                <ul class="footer-two_contact-list">
+                                    <li><span class="icon fa-solid fa-phone fa-fw"></span>+92 ( 8800 ) - 6780</li>
+                                    <li><span class="icon fa-solid fa-envelope fa-fw"></span> <a href="mailto:needhelp&#64;company.com">needhelp&#64;company.com</a></li>
+                                    <li><span class="icon fa-solid fa-map-marker fa-fw"></span>30 broklyn golden street. New York</li>
+                                </ul>
+                                <!-- Social Box -->
+                                <ul class="footer-two_socials">
+                                    <li><a href="https://www.twitter.com/" class="fa-brands fa-twitter fa-fw" target="_blank"></a></li>
+                                    <li><a href="https://www.facebook.com/" class="fa-brands fa-facebook-f fa-fw" target="_blank"></a></li>
+                                    <li><a href="https://dribbble.com/" class="fa-brands fa-dribbble fa-fw" target="_blank"></a></li>
+                                    <li><a href="https://www.linkedin.com/" class="fa-brands fa-linkedin fa-fw" target="_blank"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!--Footer Column-->
+                        <div class="footer-two_column col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer-widget instagram-widget">
+                                <h4 class="footer-two_title">instagram</h4>
+                                <div class="images-outer clearfix">
+                                    <!--Image Box-->
+                                    <figure class="image-box" *ngFor="let gallery of galleries">
+                                        <a class="lightbox-image" href="{{ gallery.image }}"><img src="{{ gallery.thumbnail }}" alt=""></a>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!-- Column -->
+                <div class="column col-lg-6 col-md-12 col-sm-12">
+                    <div class="copyright">&copy;  Copyright ©{{ currentYear }} noor_tech. All Rights Reserved</div>
+                </div>
+                <!-- Column -->
+                <div class="column col-lg-6 col-md-12 col-sm-12">
+                    <ul class="footer-bottom-nav">
+                        <li><a href="terms-conditions">Terms and conditions</a></li>
+                        <li><a href="privacy-policy">Privacy policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>

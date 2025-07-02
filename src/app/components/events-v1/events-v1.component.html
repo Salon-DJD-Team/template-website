@@ -1,0 +1,56 @@
+<!-- Leadership One -->
+<section class="leadership-one">
+    <div class="leadership-one_icon" style="background-image:url(assets/images/icons/icon-1.png)"></div>
+    <div class="leadership-one_icon-two" style="background-image:url(assets/images/icons/icon-2.png)"></div>
+    <div class="leadership-one_icon-three" style="background-image:url(assets/images/icons/icon-3.png)"></div>
+    <div class="leadership-one_icon-four" style="background-image:url(assets/images/icons/icon-4.png)"></div>
+    <div class="leadership-one_icon-five" data-parallax='{"y" : 100}' style="background-image:url(assets/images/background/pattern-10.png)"></div>
+    <div class="auto-container">
+        <div class="sec-title title-anim centered">
+            <div class="sec-title_title">Thought Leadership</div>
+            <h2 class="sec-title_heading">Join The World's Leading Companies <br> at Technology Conference</h2>
+        </div>
+        <!-- Leadership Info Tabs -->
+        <div class="leadership-info-tabs">
+            <!-- Leadership Tabs -->
+            <div class="leadership-tabs tabs-box">
+            
+                <ul class="tab-btns tab-buttons clearfix">
+                    <li class="tab-btn" *ngFor="let tab of tabs; let i = index"
+                        [class.active-btn]="selectedTab === i"
+                        (click)="selectedTab = i">
+                        {{ tab.title }} <span>{{ tab.date }}</span>
+                    </li>
+                </ul>
+
+                <div class="tabs-content">
+                    <div *ngFor="let tab of tabs; let i = index"
+                        class="tab"
+                        [class.active-tab]="selectedTab === i">
+                        <div class="content">
+                        <div *ngFor="let session of tab.sessions"
+                            [ngClass]="{'leadership-one_block': true, 'style-two': session.style === 'style-two'}">
+                            <div class="leadership-one_block-inner">
+                            <div class="leadership-one_block-content">
+                                <div class="leadership-one_block-image">
+                                <img [src]="session.image" alt="" />
+                                <div class="leadership-one_block-icon flaticon-voice"></div>
+                                </div>
+                                <div class="leadership-one_block-time">{{ session.time }}</div>
+                                <div class="leadership-one_block-name">{{ session.speaker }}</div>
+                                <h3 class="leadership-one_block-title">
+                                <a href="event-details/{{ session.link }}">{{ session.title }}</a>
+                                </h3>
+                                <div class="leadership-one_block-text">{{ session.description }}</div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Leadership One -->

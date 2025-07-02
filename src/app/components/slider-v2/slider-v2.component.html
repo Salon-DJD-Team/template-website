@@ -1,0 +1,48 @@
+<!-- Slider One -->
+<section class="slider-two">
+  <div class="main-slider-carousel owl-carousel owl-theme">
+  
+    <!-- Slide 01 -->
+    <div class="slider-two_slide" *ngFor="let slide of slides">
+      <div class="slider-two_cloud-layer" [style.backgroundImage]="'url(assets/images/main-slider/pattern-5.png)'"></div>
+      <div class="slider-two_cloud-layer" [style.backgroundImage]="'url(assets/images/main-slider/cloud.png)'"></div>
+      <div class="slider-two_image-layer" [style.backgroundImage]="'url(' + slide.image + ')'"></div>
+
+      <div class="auto-container">
+        <div class="row clearfix">
+          <div class="slider-two_image-column col-lg-6 col-md-12 col-sm-12">
+            <div class="slider-two_image">
+              <img [src]="slide.contentImage" alt="" />
+            </div>
+          </div>
+          <!-- Content Column -->
+          <div class="slider-two_content col-lg-6 col-md-12 col-sm-12">
+            <div class="slider-two_content-inner">
+              <div class="slider-two_date">{{ slide.date }}</div>
+              <h2 class="slider-two_heading">{{ slide.title }}</h2>
+              <div class="slider-two_location">{{ slide.location }}</div>
+              <div class="slider-two_button">
+                <a href="contact-us-01" class="theme-btn btn-style-three">
+                  <span class="btn-wrap">
+                    <span class="text-one">{{ slide.button_name }}</span>
+                    <span class="text-two">{{ slide.button_name }}</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End Slide 01 -->
+    
+  </div>
+
+  <!-- Time Countdown -->
+  <div class="slider-two_timer">
+    <div class="time-countdown clearfix" data-countdown="2027/12/1"></div>
+  </div>
+
+</section>
+<!-- End Main Slider Section -->

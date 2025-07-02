@@ -1,0 +1,17 @@
+<!-- Header -->
+<ng-container [ngSwitch]="currentHeader">
+  <app-header-v1 *ngIf="showLayout && currentHeader === 'v1'"></app-header-v1>
+  <app-header-v2 *ngIf="showLayout && currentHeader === 'v2'"></app-header-v2>
+  <app-header-onepage-v1 *ngIf="showLayout && currentHeader === 'onepage-v1'"></app-header-onepage-v1>
+  <app-header-onepage-v2 *ngIf="showLayout && currentHeader === 'onepage-v2'"></app-header-onepage-v2>
+</ng-container>
+
+<!-- Main Content -->
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<ng-container [ngSwitch]="currentFooter">
+  <app-footer-v1 *ngIf="showLayout && currentFooter === 'v1'"></app-footer-v1>
+  <app-footer-v2 *ngIf="showLayout && currentFooter === 'v2'"></app-footer-v2>
+  <app-footer-v3 *ngIf="showLayout && currentFooter === 'v3'"></app-footer-v3>
+</ng-container>

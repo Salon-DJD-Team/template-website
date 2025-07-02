@@ -1,0 +1,37 @@
+<!-- Speakers Three -->
+<section id="speakers" class="speakers-three">
+    <div class="speakers-three_pattern" style="background-image:url(assets/images/background/pattern-23.png)"></div>
+    <div class="speakers-three_image" style="background-image:url(assets/images/background/7.jpg)"></div>
+    <div class="auto-container">
+        <div class="sec-title light title-anim centered">
+            <div class="sec-title_title">Our Speakers</div>
+            <h2 class="sec-title_heading">Speakers Exparts</h2>
+        </div>
+        <div class="row clearfix">
+
+            <!-- Speaker Block Three -->
+            <div class="speaker-block_three col-lg-3 col-md-6 col-sm-12" *ngFor="let team of teams; let i = index">
+                <div class="speaker-block_three-inner wow {{getAnimationClass(i)}}" data-wow-delay="450ms" data-wow-duration="1500ms">
+                    <div class="speaker-block_three-image">
+                        <img [src]="team.image" [alt]="team.name" />
+                        <div class="speaker-block_three-pattern" style="background-image:url(assets/images/background/pattern-5.png)"></div>
+                        <div class="speaker-block_three-social">
+                            <span class="speaker-block_three-share fa-solid fa-share-nodes fa-fw"></span>
+                            <div class="speaker-block_three-social-list">
+                                <a [href]="team.social.facebook" class="facebook fa-brands fa-facebook-f" target="_blank"></a>
+                                <a [href]="team.social.youtube" class="youtube fa-brands fa-youtube" target="_blank"></a>
+                                <a [href]="team.social.twitter" class="twitter fa-brands fa-twitter" target="_blank"></a>
+                            </div>
+                        </div>
+                        <div class="speaker-block_three-content">
+                            <h4 class="speaker-block_three-title"><a href="speaker-details/{{team.slug}}">{{ team.name }}</a></h4>
+                            <div class="speaker-block_three-detail">{{ team.designation }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Speakers Three -->

@@ -1,0 +1,108 @@
+<!-- Faq One -->
+<section class="faq-one" [ngStyle]="{'background-image': 'url(assets/images/background/3.jpg)'}">
+  <div class="auto-container">
+    <div class="sec-title light centered">
+      <div class="sec-title_title">Frequently Asked Questions</div>
+      <h2 class="sec-title_heading">Our Customer Some <br> Frequently Ask Questions</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <!-- Left Column -->
+        <ul class="accordion-box">
+          <li class="accordion block" *ngFor="let faq of leftFaqs; let first=first">
+            <div class="acc-btn" [class.active]="first">
+              <div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span></div>
+              {{ faq.question }}
+            </div>
+            <div class="acc-content" [class.current]="first">
+              <div class="content">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <!-- Right Column -->
+        <ul class="accordion-box">
+          <li class="accordion block" *ngFor="let faq of rightFaqs; let first=first">
+            <div class="acc-btn" [class.active]="first">
+              <div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span></div>
+              {{ faq.question }}
+            </div>
+            <div class="acc-content" [class.current]="first">
+              <div class="content">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Faq One -->
+  
+
+
+
+  <!-- <section class="faq-one" style="background-image:url(assets/images/background/3.jpg)">
+    <div class="auto-container">
+      <div class="sec-title light centered">
+        <div class="sec-title_title">Frequently Asked Questions</div>
+        <h2 class="sec-title_heading">Our Customers' Some <br> Frequently Asked Questions</h2>
+      </div>
+  
+      <div class="row clearfix">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <ul class="accordion-box">
+            <li
+              *ngFor="let faq of halfFaqs; let i = index"
+              class="accordion block"
+              [ngClass]="{ 'active-block': activeFaqIndex === i }"
+            >
+              <div
+                class="acc-btn"
+                (click)="toggleFaq(i)"
+                [ngClass]="{ active: activeFaqIndex === i }"
+              >
+                <div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span></div>
+                {{ faq.question }}
+              </div>
+              <div class="acc-content" [ngClass]="{ current: activeFaqIndex === i }">
+                <div class="content">
+                  <p>{{ faq.answer }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-6 col-md-12 col-sm-12">
+          <ul class="accordion-box">
+            <li
+              *ngFor="let faq of otherHalfFaqs; let i = index"
+              class="accordion block"
+              [ngClass]="{ 'active-block': activeFaqIndex === i + halfFaqs.length }"
+            >
+              <div
+                class="acc-btn"
+                (click)="toggleFaq(i + halfFaqs.length)"
+                [ngClass]="{ active: activeFaqIndex === i + halfFaqs.length }"
+              >
+                <div class="icon-outer"><span class="icon fa-solid fa-angle-down fa-fw"></span></div>
+                {{ faq.question }}
+              </div>
+              <div class="acc-content" [ngClass]="{ current: activeFaqIndex === i + halfFaqs.length }">
+                <div class="content">
+                  <p>{{ faq.answer }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>   -->

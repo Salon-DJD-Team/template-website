@@ -1,0 +1,18 @@
+<!-- Clients Two -->
+<section class="clients-two" [ngClass]="{'style-two': currentRoute === '/schedule' || currentRoute === '/speakers'}" >
+    <div class="auto-container">
+        <div class="sec-title title-anim centered">
+            <div class="sec-title_title">Sponsors and Exhibitors</div>
+            <h2 class="sec-title_heading">Appreciate Our Kind Partners</h2>
+        </div>
+        <div class="clients-two_slide d-flex">
+
+            <!-- Client Column -->
+            <div class="clients-two_column" *ngFor="let partner of partners">
+                <a href="{{ partner.url }}"><img src="{{ partner.image }}" alt="" /></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Clients Two -->

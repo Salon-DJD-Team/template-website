@@ -1,0 +1,19 @@
+<!-- Counter One -->
+<section class="counter-three">
+    <div class="auto-container">
+        <div class="inner-container">
+            <div class="row clearfix">
+
+                <!-- Counter Column -->
+                <div class="counter-three_block col-lg-3 col-md-6 col-sm-12" *ngFor="let fact of facts">
+                    <div class="counter-three_inner">
+                        <div class="counter-three_counter"><span class="odometer" [attr.data-count]="fact.counter"></span>{{ fact.suffix }}</div>
+                        <div class="counter-three_text">{{ fact.title }}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Counter One -->
